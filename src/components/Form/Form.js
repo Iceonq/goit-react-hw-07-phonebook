@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './Form.module.css';
-import { addContact } from 'redux/actions';
+import { addContact } from 'redux/operations';
 import { useState } from 'react';
-import { contactsSelector } from 'redux/selectors';
+import { getContacts } from 'redux/selectors';
 
 export const Form = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState();
 
-  const contacts = useSelector(contactsSelector);
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const handleContactCreator = e => {
@@ -16,7 +16,7 @@ export const Form = () => {
     if (contacts.find(contact => contact.name === name)) {
       alert(`Contact ${name} is in your contact list`);
     } else {
-      dispatch(addContact(name, number));
+      dispatch(addContact({ name, number }));
     }
   };
 
