@@ -6,7 +6,7 @@ import { getContacts } from 'redux/selectors';
 
 export const Form = () => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState();
+  const [number, setNumber] = useState('');
 
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();

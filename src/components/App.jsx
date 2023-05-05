@@ -2,7 +2,7 @@ import { ContactsList } from './ContactsList/ContactsList';
 import { Form } from './Form/Form';
 import './App.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts, getError, getIsLoading } from 'redux/selectors';
+import { getError, getIsLoading } from 'redux/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 
